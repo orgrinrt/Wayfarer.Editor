@@ -16,8 +16,7 @@ namespace Wayfarer.Editor
         
         public override void _EnterTree()
         {
-            EnablePlugin();
-            
+            base._EnterTree();
             try
             {
                 Log.Initialize();
@@ -55,8 +54,8 @@ namespace Wayfarer.Editor
             {
                 Log.Wf.EditorError("Couldn't remove old Editor systems", e, true);
             }
-
-            DisablePlugin();
+            
+            base._ExitTree();
         }
 
         private void AddEditorSystems()
