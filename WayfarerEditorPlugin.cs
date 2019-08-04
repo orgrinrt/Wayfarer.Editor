@@ -10,7 +10,7 @@ using Wayfarer.Core.Utils.Helpers;
 namespace Wayfarer.Editor
 {
     [Tool]
-    public class WayfarerEditorPlugin : EditorPlugin
+    public class WayfarerEditorPlugin : WayfarerModule
     {
         public EditorInterface EditorInterface => GetEditorInterface();
         
