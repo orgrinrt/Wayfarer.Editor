@@ -49,9 +49,6 @@
       <HintPath>$(ProjectDir)\..\..\.mono\assemblies\GodotSharpEditor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="GodotSharpEditor, Version=1.0.7055.41580, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\.mono\assemblies\GodotSharpEditor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
