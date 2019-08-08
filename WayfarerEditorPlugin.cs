@@ -43,7 +43,7 @@ namespace Wayfarer.Editor
         {
             try
             {
-                //RemoveEditorSystems();
+                RemoveEditorSystems();
             }
             catch (Exception e)
             {
