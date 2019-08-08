@@ -64,7 +64,7 @@ namespace Wayfarer.Editor
                 MouseManager mouseManager = new MouseManager() { Name = "MouseManager" };
                 try
                 {
-                    AddChild(mouseManager);
+                    GetEditorInterface().GetBaseControl().AddChild(mouseManager);
                     _mouseManager = mouseManager;
                 }
                 catch (Exception e)
@@ -83,7 +83,7 @@ namespace Wayfarer.Editor
                 Iterator iterator = new Iterator { Name = "EditorIterator" };
                 try
                 {
-                    AddChild(iterator);
+                    GetEditorInterface().GetBaseControl().AddChild(iterator);
                     _iterator = iterator;
                 }
                 catch (Exception e)
