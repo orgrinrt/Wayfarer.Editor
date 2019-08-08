@@ -1,4 +1,4 @@
-﻿#if TOOLS
+﻿﻿#if TOOLS
 
 using System;
 using System.Linq;
@@ -29,23 +29,6 @@ namespace Wayfarer.Editor
         {
             _instance = this;
             
-            try
-            {
-                Log.Initialize();
-            }
-            catch (Exception e)
-            {
-                Log.Wayfarer.Error("Couldn't initialize Log (static)", e, true);
-            }
-            try
-            {
-                Directories.Initialize();
-            }
-            catch (Exception e)
-            {
-                Log.Wayfarer.Error("Couldn't initialize Directories (static)", e, true);
-            }
-
             try
             {
                 AddEditorSystems();
@@ -81,7 +64,8 @@ namespace Wayfarer.Editor
                 MouseManager mouseManager = new MouseManager() { Name = "MouseManager" };
                 try
                 {
-                    EditorInterface.GetBaseControl().AddChild(mouseManager);
+                    AddChild(mouseManager);
+                    
                     _mouseManager = mouseManager;
                 }
                 catch (Exception e)
@@ -100,13 +84,14 @@ namespace Wayfarer.Editor
                 Iterator iterator = new Iterator { Name = "EditorIterator" };
                 try
                 {
-                    EditorInterface.GetBaseControl().AddChild(iterator);
+                    AddChild(iterator);
                     _iterator = iterator;
                 }
                 catch (Exception e)
                 {
                     Log.Wf.EditorError("Couldn't add EditorIterator to the base node of editor...?", e, true);
                 }
+
             }
             
             return _iterator;
