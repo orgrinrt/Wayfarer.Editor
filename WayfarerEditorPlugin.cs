@@ -65,6 +65,7 @@ namespace Wayfarer.Editor
                 try
                 {
                     AddChild(mouseManager);
+                    
                     _mouseManager = mouseManager;
                 }
                 catch (Exception e)
@@ -90,6 +91,7 @@ namespace Wayfarer.Editor
                 {
                     Log.Wf.EditorError("Couldn't add EditorIterator to the base node of editor...?", e, true);
                 }
+
             }
             
             return _iterator;
