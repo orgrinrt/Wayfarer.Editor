@@ -24,11 +24,16 @@ namespace Wayfarer.Editor
         public EditorInterface EditorInterface => GetEditorInterface();
         public Iterator Iterator => GetIterator();
         public MouseManager MouseManager => GetMouseManager();
-        
+
+        public override void _EnterTree()
+        {
+            _instance = this;
+            base._EnterTree();
+        }
+
         public override void _EnterTreeSafe()
         {
             _instance = this;
-            
             try
             {
                 AddEditorSystems();
@@ -49,6 +54,8 @@ namespace Wayfarer.Editor
             {
                 Log.Wf.EditorError("Couldn't remove old Editor systems", e, true);
             }
+
+            _instance = null;
         }
 
         private void AddEditorSystems()
